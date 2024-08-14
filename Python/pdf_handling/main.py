@@ -10,9 +10,7 @@ if __name__ == '__main__':
             content = page.extract_text()
             pdf_text.append(content)
 
-    print(len(pdf_text), pdf_text[19].count('PIP'))
+    # print(len(pdf_text), pdf_text[19].count('PIP'))
 
-    for page in pdf_text:
-        print(page)
-        print()
-        print()
+    for no, page in enumerate(pdf_text, start=1):
+        print(f'On page {no:2}, the string "PIP" was found {page.count("PIP")} times.')
